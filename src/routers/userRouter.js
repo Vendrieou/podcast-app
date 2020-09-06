@@ -8,11 +8,11 @@
 // import cors from 'cors'
 // import bcrypt from 'bcrypt'
 // import User from '../models/User'
-var express = require('express')
-var jwt = require('jsonwebtoken')
-var bcrypt = require('bcrypt')
-var usersController = require('../controller/usersController')
-var User = require('../model/tbl_user')
+// var express = require('express')
+// var jwt = require('jsonwebtoken')
+// var bcrypt = require('bcrypt')
+// var usersController = require('../controller/usersController')
+// var User = require('../model/tbl_user')
 
 // var router = express.Router()
 // router.use(cors())
@@ -26,13 +26,12 @@ var User = require('../model/tbl_user')
 // router.get('/api/profile', usersController.getMyData)
 
 // module.exports = router
-module.exports = (app) => {
-    var usersController = require('../controller/usersController')
+module.exports = function (app) {
+    var usersController = require('../controller/usersController');
 
     app.post('/api/register', usersController.register)
 
-    app.post('/api/login', usersController.login)
+    app.post('/api/login', usersController.login);
 
-    app.get('/api/profile', usersController.getMyData)
-
+    app.get('/api/profile', usersController.getMyData);
 }

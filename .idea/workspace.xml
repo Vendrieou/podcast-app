@@ -80,12 +80,31 @@
         <option name="myItemId" value="db_podcast" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="customers" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db_podcast.users" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_podcast.users" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/c3c03473/b7b4be2e-ee91-4446-a8de-a6860b851798/db_podcast.users">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_podcast.customers" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/c3c03473/b7b4be2e-ee91-4446-a8de-a6860b851798/db_podcast.customers">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -197,7 +216,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/c3c03473/b7b4be2e-ee91-4446-a8de-a6860b851798/db_podcast.customers">
+    <entry file="dbDummy://dbtable:/c3c03473/b7b4be2e-ee91-4446-a8de-a6860b851798/db_podcast.users">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -210,7 +229,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/c3c03473/b7b4be2e-ee91-4446-a8de-a6860b851798/db_podcast.users">
+    <entry file="dbDummy://dbtable:/c3c03473/b7b4be2e-ee91-4446-a8de-a6860b851798/db_podcast.customers">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

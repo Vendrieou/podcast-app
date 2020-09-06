@@ -1,3 +1,5 @@
+const User = require('../model/tbl_user')
+
 exports.register = (req, res) => {
     const today = new Date()
     const userData = {
@@ -8,31 +10,51 @@ exports.register = (req, res) => {
         created: today
     }
 
-    User.findOne({
-        where: {
-            email: req.body.email
+    try {
+        if (req.body.email) {
+            bcrypt.hash(req.body.password, 10, (err, hash) => {
+                userData.password = hash
+                User.create(userData)
+                    .then(user => {
+                        res.json({ status: user.email + 'Registered!' })
+                    })
+                    .catch(err => {
+                        res.send('error: ' + err)
+                    })
+            })
+        } else {
+            res.json({ error: 'User already exists' })
         }
-    })
-        //TODO bcrypt
-        .then(user => {
-            if (!user) {
-                bcrypt.hash(req.body.password, 10, (err, hash) => {
-                    userData.password = hash
-                    User.create(userData)
-                        .then(user => {
-                            res.json({ status: user.email + 'Registered!' })
-                        })
-                        .catch(err => {
-                            res.send('error: ' + err)
-                        })
-                })
-            } else {
-                res.json({ error: 'User already exists' })
-            }
-        })
-        .catch(err => {
-            res.send('error: ' + err)
-        })
+
+    } catch (error) {
+        res.send('error: ' + err)
+    }
+
+    // User.findOne({
+    //     where: {
+    //         email: req.body.email
+    //     }
+    // })
+    //     //TODO bcrypt
+    //     .then(user => {
+    //         if (!user) {
+    //             bcrypt.hash(req.body.password, 10, (err, hash) => {
+    //                 userData.password = hash
+    //                 User.create(userData)
+    //                     .then(user => {
+    //                         res.json({ status: user.email + 'Registered!' })
+    //                     })
+    //                     .catch(err => {
+    //                         res.send('error: ' + err)
+    //                     })
+    //             })
+    //         } else {
+    //             res.json({ error: 'User already exists' })
+    //         }
+    //     })
+    //     .catch(err => {
+    //         res.send('error: ' + err)
+    //     })
 }
 
 exports.login = (req, res) => {
@@ -58,7 +80,7 @@ exports.login = (req, res) => {
         })
 }
 
-exports.getMydata = (req, res) => {
+exports.getMyData = (req, res) => {
     var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
     User.findOne({
