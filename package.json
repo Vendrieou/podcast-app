@@ -1,0 +1,12 @@
+{
+  "name": "podcast-app-be",
+  "version": "1.0.0",
+  "description": "backend app podcast-app",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vendrieou/podcast-app.git"
+  },
+  "author": "vendrie",
+  "license": "MIT"
+}
